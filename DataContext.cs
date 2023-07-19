@@ -5,7 +5,9 @@ namespace SeedData;
 
 public class DataContext : DbContext
 {
-    public DbSet<Person> People { get; set; }
+    public DbSet<Car> Cars { get; set; }
+    public DbSet<Client> Clients { get; set; }
+    public DbSet<Bus> Buses { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -14,9 +16,21 @@ public class DataContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Person>().HasData(
-            new Person { Id = 20, Name = "Ali Karimov" },
-            new Person { Id = 22, Name = "Jamol Fozilov" }
+        modelBuilder.Entity<Car>().HasData(
+            new Car { Id = 1, Name = "BMW", },
+            new Car { Id = 2, Name = "Mutsubity" }
+        );
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<Client>().HasData(
+            new Client { Id = 3, Name = "Ali Karimov", },
+            new Client { Id = 4, Name = "Jamol Fozilov" }
+        );
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<Bus>().HasData(
+            new Bus { Id = 5, Name = "Mers", },
+            new Bus { Id = 6, Name = "Mers" }
         );
         base.OnModelCreating(modelBuilder);
     }

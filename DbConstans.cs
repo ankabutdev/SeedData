@@ -4,7 +4,7 @@ public class DbConstans
 {
     public const string DB_HOST = "localhost";
     public const string DB_PORT = "5432";
-    public const string DB_DATABASE = "FFF";
+    public const string DB_DATABASE = "GMDB";
     public const string DB_USER = "postgres";
     public const string DB_PASSWORD = "Ankabut";
 
